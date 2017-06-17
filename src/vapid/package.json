@@ -1,0 +1,31 @@
+{
+  "name": "vapid",
+  "version": "1.0.0",
+  "description": "Implement the VAPID protocol",
+  "main": "src/vapid.js",
+  "directories": {
+    "lib":"src",
+    "doc":"doc",
+    "test": "test"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.4.3"
+  },
+  "scripts": {
+    "test": "node test/vapid.js",
+    "jsdoc": "./node_modules/.bin/jsdoc -c config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmike16/webpushprotocol.git"
+  },
+  "keywords": [
+    "vapid"
+  ],
+  "author": "dmike <cipmiky@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmike16/webpushprotocol/issues"
+  },
+  "homepage": "https://github.com/dmike16/webpushprotocol#readme"
+}

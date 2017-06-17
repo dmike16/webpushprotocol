@@ -1,0 +1,29 @@
+{
+  "name": "webpushprotocol",
+  "version": "1.0.0",
+  "description": "A nodejs library that implement or try to implement the webpush protocol",
+  "main": "src/webpushprotocol.js",
+  "directories": {
+    "lib": "src",
+    "doc": "doc",
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "asn1.js": "^4.8.1",
+    "jsdoc": "^3.4.3"
+  },
+  "repository":{
+    "type":"git",
+    "url": "https://github.com/dmike16/webpushprotocol"
+  },
+  "scripts": {
+    "test": "node test/webpushprotocol.js",
+    "jsdoc": "./node_modules/.bin/jsdoc -c config.json"
+  },
+  "keywords": [
+    "webpush"
+  ],
+  "author": "dmike16 <cipmiky@gmail.com>",
+  "license": "MIT"
+}

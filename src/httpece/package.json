@@ -1,0 +1,28 @@
+{
+  "name": "httpece",
+  "version": "1.0.0",
+  "description": "Implemente the http ece protocol",
+  "main": "src/httpece.js",
+  "directories": {
+    "lib": "src",
+    "doc": "doc",
+    "test": "test"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.4.3"
+  },
+  "repository":{
+    "type":"git",
+    "url": "https://github.com/dmike16/webpushprotocol"
+  },
+  "scripts": {
+    "test": "node test/httpece.js",
+    "jsdoc": "./node_modules/.bin/jsdoc -c config.json"
+  },
+  "keywords": [
+    "http",
+    "ece"
+  ],
+  "author": "dmike <cipmiky@gmail.com>",
+  "license": "MIT"
+}
