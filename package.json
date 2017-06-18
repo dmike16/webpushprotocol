@@ -13,8 +13,8 @@
     "asn1.js": "^4.8.1",
     "jsdoc": "^3.4.3"
   },
-  "repository":{
-    "type":"git",
+  "repository": {
+    "type": "git",
     "url": "https://github.com/dmike16/webpushprotocol"
   },
   "scripts": {
