@@ -4,13 +4,13 @@
     "dictionaries": ["jsdoc", "closure"]
   },
   "source": {
-    "include":["./src"],
+    "include":["./lib"],
     "includePattern": ".+\\.js(doc|x)?$",
     "excludePattern": "(^|\\/|\\\\)_"
   },
   "plugins": [],
   "templates": {
-    "cleverLinks": false,
+    "cleverLinks": true,
     "monospaceLinks": false
   },
   "opts":{
