@@ -1,18 +1,15 @@
 {
-  "name": "vapid",
+  "name": "jwt",
   "version": "1.0.0",
-  "description": "Implement the VAPID protocol",
-  "main": "src/vapid.js",
+  "description": "Utility to create a JWT",
+  "main": "lib/jwt.js",
   "directories": {
-    "lib":"src",
-    "doc":"doc",
+    "lib": "lib",
+    "doc": "doc",
     "test": "test"
   },
-  "devDependencies": {
-    "jsdoc": "^3.4.3"
-  },
   "scripts": {
-    "test": "node test/vapid.js",
+    "test": "node test/jwt.js",
     "jsdoc": "./node_modules/.bin/jsdoc -c config.json"
   },
   "repository": {
@@ -20,9 +17,9 @@
     "url": "git+https://github.com/dmike16/webpushprotocol.git"
   },
   "keywords": [
-    "vapid"
+    "jwt"
   ],
-  "author": "dmike <cipmiky@gmail.com>",
+  "author": "dmike <cipmiy@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dmike16/webpushprotocol/issues"

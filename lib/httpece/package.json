@@ -2,9 +2,9 @@
   "name": "httpece",
   "version": "1.0.0",
   "description": "Implemente the http ece protocol",
-  "main": "src/httpece.js",
+  "main": "lib/httpece.js",
   "directories": {
-    "lib": "src",
+    "lib": "lib",
     "doc": "doc",
     "test": "test"
   },

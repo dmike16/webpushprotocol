@@ -2,9 +2,9 @@
   "name": "webpushprotocol",
   "version": "1.0.0",
   "description": "A nodejs library that implement or try to implement the webpush protocol",
-  "main": "src/webpushprotocol.js",
+  "main": "lib/webpushprotocol.js",
   "directories": {
-    "lib": "src",
+    "lib": "lib",
     "doc": "doc",
     "test": "test"
   },
