@@ -18,8 +18,8 @@
     "url": "https://github.com/dmike16/webpushprotocol"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/urlsafebase64.js",
-    "jsdoc": "./node_modules/.bin/jsdoc -c config.json"
+    "test": "mocha test/urlsafebase64.js",
+    "jsdoc": "jsdoc -c config.json"
   },
   "keywords": [
     "url",
