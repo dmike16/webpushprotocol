@@ -2,24 +2,29 @@
   "name": "urlsafebase64",
   "version": "1.0.0",
   "description": "Url safe base64 encoding and decoding",
-  "main": "lib/urlsafebase64.js",
+  "main": "urlbase64.js",
+  "types":"types/Urlbase64.d.ts",
   "directories": {
-    "lib": "lib",
+    "lib": "dist",
     "doc": "doc",
     "test": "test"
   },
   "devDependencies": {
-    "chai": "^4.0.2",
-    "jsdoc": "^3.4.3",
-    "mocha": "^3.4.2"
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "chai": "^4.1.2",
+    "gulp": "^3.9.1",
+    "gulp-typedoc": "^2.1.0",
+    "gulp-typescript": "^3.2.2",
+    "mocha": "^4.0.0",
+    "typescript": "^2.5.3"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/dmike16/webpushprotocol"
   },
   "scripts": {
-    "test": "mocha test/urlsafebase64.js",
-    "jsdoc": "jsdoc -c config.json"
+    "test": "mocha test/urlsafebase64.js"
   },
   "keywords": [
     "url",

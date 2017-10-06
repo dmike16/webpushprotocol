@@ -13,7 +13,7 @@ describe('urlbase64',function(){
 
   describe('#encode()',function(){
     it('The mode should be encoding', function(){
-      return new Promise((res,rej)=>{
+      return new Promise<void>((res,rej)=>{
         testInstance.encode().mode.should.equal(mode.ENCODE);
         res();
       });
