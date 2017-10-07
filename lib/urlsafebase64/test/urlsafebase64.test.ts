@@ -12,27 +12,17 @@ describe('UrlsafeBase64', function() {
 
   describe('#encode()', function() {
     it('The mode should be encoding', function() {
-      return new Promise<void>((res, rej) => {
-        try {
-          expect(testInstance.encode().mode).to.be.equals(Urlbase64Mode.ENCODE);
-          res();
-        } catch (err) {
-          rej(err);
-        }
-      });
+      return testingPromise(()=>{
+        expect(testInstance.encode().mode).to.be.equals(Urlbase64Mode.ENCODE);
+      })
     });
   });
 
   describe('#decode()', function() {
     it('The mode should be decoding', function() {
-      return new Promise<void>((res, rej) => {
-        try {
-          expect(testInstance.decode().mode).to.be.equals(Urlbase64Mode.DECODE);
-          res();
-        } catch (err) {
-          rej(err);
-        }
-      });
+      return testingPromise(()=>{
+        expect(testInstance.decode().mode).to.be.equals(Urlbase64Mode.DECODE);
+      })
     });
   });
 
@@ -45,3 +35,14 @@ describe('UrlsafeBase64', function() {
     it('Should decode the internal buffer');
   });
 });
+
+function testingPromise(test:(arg?:void)=>void){
+  return new Promise<void>((resolve,reject)=>{
+    try{
+      test();
+      resolve();
+    }catch(err){
+      reject(err);
+    }
+  })
+}
