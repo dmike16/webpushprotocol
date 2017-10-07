@@ -3,6 +3,8 @@
   "compilerOptions":{
     "module": "commonjs",
     "target": "ES6",
+    "emitDecoratorMetadata":true,
+    "experimentalDecorators":true,
     "sourceMap": true,
     "noImplicitAny":true,
     "alwaysStrict": true,
@@ -10,10 +12,9 @@
     "lib":[
       "ES6"
     ],
-    "declarationDir": "./types",
     "types": ["node","mocha","chai"]
   },
   "include":[
-    "./*.ts"
+    "./**/*"
   ]
 }

@@ -12,19 +12,19 @@
 import { Transform } from 'stream';
 
 /**
+ * Default export. Factory function.
+ * @return {UrlsafeBase64}
+ */
+export default function createUrlsafeBase64(): UrlsafeBase64{
+  return new UrlsafeBase64({});
+}
+
+/**
  * Constant enum da define encoding and decoding mode.
  */
 export const enum Urlbase64Mode {
   ENCODE = "ENCODE",
   DECODE = "DECODE"
-}
-
-/**
- * Default export. Factory function.
- * @return {UrlsafeBase64}
- */
-export default function createUrlbae64(): UrlsafeBase64{
-  return new UrlsafeBase64({});
 }
 
 /**

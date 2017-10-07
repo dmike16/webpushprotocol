@@ -12,7 +12,7 @@
     "lib":[
       "ES6"
     ],
-    "types": ["node"]
+    "types": ["node","mocha","chai"]
   },
   "include":[
     "src/**/*"
