@@ -7,7 +7,6 @@
 *   <li> remove trailing '='</li>
 * </ul
 * @author dmike <cipmiky@gmail.com>
-* @module urlsafebase64
 */
 
 import { Transform } from 'stream';
@@ -22,25 +21,23 @@ export const enum Urlbase64Mode {
 
 /**
  * Default export. Factory function.
- * @return {UrlsafeBase64} 
+ * @return {UrlsafeBase64}
  */
 export default function createUrlbae64(): UrlsafeBase64{
   return new UrlsafeBase64({});
 }
 
 /**
- * @alias module:urlsafebase64.UrlsafeBase64
- * @classdesc Class that implemente the urlsafebase64 protocol.
+ * Class that implemente the urlsafebase64 protocol.
  * This class can be used like a Stream or using the  method
- * [update]{@link module:urlsafebase64.UrlsafeBase64#update}
- * and [digest]{@link module:urlsafebase64.UrlsafeBase64#digest}
+ * [[update]]
+ * [[digest]]
  * @see {@link https://nodejs.org/dist/latest-v8.x/docs/api/stream.html#stream_implementing_a_transform_stream|Trasform}
  */
 export class UrlsafeBase64 extends Transform {
   private _handler = new binding.UrlsafeBase64Core();
   /**
    * Default constructor, that call the super constructor of Trasform stream.
-   * @constructs UrlsafeBase64
    * @param  {Object} option Object
    */
   constructor(option: any) {
@@ -128,24 +125,30 @@ export class UrlsafeBase64 extends Transform {
 export type TypedArray = Int8Array | Uint8Array | Uint8ClampedArray
   | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array;
 
-
+/**
+ * Internal namespace
+ * @private
+ */
 namespace binding {
   /**
    * Internal class that implemente the urlsafebase64
    * protocol.
    * @private
-   * @class UrlsafeBase64 UrlsafeBase64
    */
   export class UrlsafeBase64Core {
     private _buffer: Buffer = null;
     private _mode: Urlbase64Mode = Urlbase64Mode.ENCODE;
 
+    /**
+     *
+     * @private
+     */
     constructor() {
 
     }
     /**
      * Update the internal buffer with the input passed.
-     * @param  {Buffer|String|TypedArray} chunk The chunk to be processed
+     * @private
      */
     update(chunk: Chunk) {
       let tmp_buffer = checkArgument(chunk);
@@ -157,7 +160,7 @@ namespace binding {
     }
     /**
      * Make the encode or decode in base64
-     * @return {String} The encode or decode string
+     * @private
      */
     digest() {
       switch (this._mode) {
@@ -171,7 +174,7 @@ namespace binding {
     }
     /**
      * Set the mode to encode
-     * @return {UrlsafeBase64} Return this for chaining
+     * @private
      */
     encode(): UrlsafeBase64Core {
       this._mode = Urlbase64Mode.ENCODE;
@@ -179,7 +182,7 @@ namespace binding {
     }
     /**
      * Set the mode to decode
-     * @return {UrlsafeBase64} Return this for chaining
+     * @private
      */
     decode(): UrlsafeBase64Core {
       this._mode = Urlbase64Mode.DECODE;
@@ -187,15 +190,13 @@ namespace binding {
     }
     /**
      * Get mode.
-     * @return {string} Return mode: encode or decode
+     * @private
      */
     get mode() {
       return this._mode;
     }
     /**
-     * [validate description]
-     * @param  {String} base64 The inpur string to validate
-     * @return {Boolean}       True if is base64 valid.
+     * @private
      */
     static validate(base64: string) {
       return /^[A-Za-z0-9\-_]+$/.test(base64);
@@ -205,24 +206,22 @@ namespace binding {
 
   /**
    * Alias type to define a chunk
+   * @private
    */
   type Chunk = Buffer | string | TypedArray;
 
 
   /**
    * Check compiler exhaustition
-   * @param  {never} x
-   * @return {never}
+   *@private
    */
   function assertNever(x: never): never {
     throw new Error(`Unexpected object ${x}`);
   }
 
   /**
-   * Internal function used to check the argumento of UrlsafeBase64#update
+   * Internal function used to check the argumento of update
    * @private
-   * @param  {Buffer|String|TypedArray} chunk input argument pass
-   * @return {Buffer}       The buffer that wraps the input
    */
   function checkArgument(chunk: Chunk): Buffer {
     if (typeof chunk === 'string') {
@@ -238,8 +237,6 @@ namespace binding {
   /**
    * Internal fucntion used to encode in url safe base64.
    * @private
-   * @param       {Buffer} input The buffer to encode
-   * @return      {String}       The encode string
    */
   function _encode(input: Buffer): string {
     return input.toString('base64')
@@ -250,8 +247,6 @@ namespace binding {
   /**
    * Internal function used to decode the url safe base64
    * @private
-   * @param       {String} urlbase64 The encode string
-   * @return      {Buffer}           The decoded string
    */
   function _decode(urlbase64: string): Buffer {
     let l = urlbase64.length;

@@ -3,6 +3,8 @@
   "compilerOptions":{
     "module": "commonjs",
     "target": "ES6",
+    "emitDecoratorMetadata":true,
+    "experimentalDecorators":true,
     "sourceMap": true,
     "noImplicitAny":true,
     "alwaysStrict": true,
