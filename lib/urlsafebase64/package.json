@@ -2,7 +2,7 @@
   "name": "urlsafebase64",
   "version": "1.0.0",
   "description": "Url safe base64 encoding and decoding",
-  "main": "urlbase64.js",
+  "main": "index.js",
   "types": "types/Urlbase64.d.ts",
   "directories": {
     "lib": "dist",
