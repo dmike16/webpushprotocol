@@ -58,11 +58,12 @@ describe('UrlsafeBase64', function() {
       testInstance.decode().end();
     });
   });
-});
 
-describe('@Sealed: ',function(){
-  it('Should not change the configuration of properties');
-})
+  describe('@Sealed: ',function(){
+    it('Should not change the configuration of properties');
+  });
+
+});
 
 function testingPromise(test: (arg?: void) => void) {
   return new Promise<void>((resolve, reject) => {
