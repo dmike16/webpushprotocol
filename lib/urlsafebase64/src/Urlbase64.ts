@@ -15,7 +15,7 @@ import { Transform } from 'stream';
  * Default export. Factory function.
  * @return {UrlsafeBase64}
  */
-export default function createUrlsafeBase64(): UrlsafeBase64{
+export default function createUrlsafeBase64(): UrlsafeBase64 {
   return new UrlsafeBase64({});
 }
 
@@ -34,6 +34,7 @@ export const enum Urlbase64Mode {
  * [[digest]]
  * @see {@link https://nodejs.org/dist/latest-v8.x/docs/api/stream.html#stream_implementing_a_transform_stream|Trasform}
  */
+@Sealed
 export class UrlsafeBase64 extends Transform {
   private _handler = new binding.UrlsafeBase64Core();
   /**
@@ -68,7 +69,7 @@ export class UrlsafeBase64 extends Transform {
    * @private
    * @param  {Function} callback A callback function
    */
-  _flush(callback:(chunk?:any)=>void) {
+  _flush(callback: (chunk?: any) => void) {
     this.push(this._handler.digest());
     callback();
   }
@@ -125,6 +126,15 @@ export class UrlsafeBase64 extends Transform {
 export type TypedArray = Int8Array | Uint8Array | Uint8ClampedArray
   | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array;
 
+/**
+ * Decotarator that seal the object UrlsafeBase64
+ * @private
+ * @param  {Function} ctor [description]
+ */
+function Sealed(ctor: typeof UrlsafeBase64) {
+  Object.seal(ctor);
+  Object.seal(ctor.prototype);
+}
 /**
  * Internal namespace
  * @private
