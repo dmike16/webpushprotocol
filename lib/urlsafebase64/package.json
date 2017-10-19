@@ -27,6 +27,7 @@
     "url": "https://github.com/dmike16/webpushprotocol"
   },
   "scripts": {
+    "help" : "gulp",
     "build": "gulp js",
     "types": "gulp dts",
     "dist": "gulp dist",
