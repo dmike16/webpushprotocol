@@ -60,7 +60,15 @@ describe('UrlsafeBase64', function() {
   });
 
   describe('@Sealed: ',function(){
-    it('Should not change the configuration of properties');
+    let changeConfig = ()=>{
+      delete UrlsafeBase64.validate;
+    };
+    
+    it('Should not change the configuration of properties',function(){
+      expect(Object.isSealed(Object.getPrototypeOf(testInstance))).to.be.true;
+      expect(Object.isSealed(UrlsafeBase64)).to.be.true;
+      expect(changeConfig).to.throw(TypeError);
+    });
   });
 
 });
