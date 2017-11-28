@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A nodejs library that implement or try to implement the webpush protocol",
   "main": "lib/webpushprotocol.js",
+  "types": "lib/webpushprotocol.d.ts",
   "directories": {
     "lib": "lib",
     "doc": "doc",
@@ -10,9 +11,21 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
     "asn1.js": "^4.8.1",
-    "jsdoc": "^3.4.3"
+    "chai": "^4.1.2",
+    "gulp": "^3.9.1",
+    "gulp-typedoc": "^2.1.0",
+    "gulp-typescript": "^3.2.2",
+    "mocha": "^4.0.0",
+    "ts-node": "^3.3.0",
+    "typedoc": "^0.9.0",
+    "typescript": "^2.5.3"
   },
+  "bundledDependencies":[
+    "lib/urlsafebase64"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/dmike16/webpushprotocol"

@@ -1,3 +1,13 @@
+## Node modules
 node_modules
-doc
+
+## yarn files
+yarn-error.log
+
+## Mist
 .DS_Store
+
+## Target directory
+dist/
+types/
+docs/
