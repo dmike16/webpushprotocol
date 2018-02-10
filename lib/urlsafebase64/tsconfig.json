@@ -10,7 +10,7 @@
     "alwaysStrict": true,
     "declaration": true,
     "lib":[
-      "ES6"
+      "es6"
     ],
     "types": ["node","mocha","chai"]
   },
