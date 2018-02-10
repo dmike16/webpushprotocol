@@ -19,12 +19,7 @@
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.2.2",
     "mocha": "^4.0.0",
-<<<<<<< HEAD
-    "ts-node": "^3.3.0",
-=======
     "ts-node": "^4.0.1",
-    "typedoc": "^0.9.0",
->>>>>>> origin/experiment
     "typescript": "^2.5.3"
   },
   "repository": {
