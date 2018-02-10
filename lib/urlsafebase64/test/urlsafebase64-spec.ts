@@ -1,8 +1,11 @@
-import { Urlbase64Mode, UrlsafeBase64 } from '../src/Urlbase64';
+import { Urlbase64Mode, UrlsafeBase64 } from '../src/urlsafebase64';
 
-import createUrlsafeBase64 from '../src/Urlbase64';
+import createUrlsafeBase64 from '../src/urlsafebase64';
 import { expect } from 'chai';
 
+/**
+ * @test {UrlsafeBase64}
+ */
 describe('UrlsafeBase64', function() {
   let testInstance: UrlsafeBase64;
 
@@ -10,6 +13,9 @@ describe('UrlsafeBase64', function() {
     testInstance = createUrlsafeBase64();
   });
 
+  /**
+   * @test {UrlsafeBase64#encode}
+   */
   describe('#encode()', function() {
     it('The mode should be encoding', function() {
       return testingPromise(() => {
@@ -17,7 +23,9 @@ describe('UrlsafeBase64', function() {
       })
     });
   });
-
+  /**
+   * @test {UrlsafeBase64#decode}
+   */
   describe('#decode()', function() {
     it('The mode should be decoding', function() {
       return testingPromise(() => {
@@ -25,7 +33,9 @@ describe('UrlsafeBase64', function() {
       })
     });
   });
-
+  /**
+   * @test {UrlsafeBase64#update}
+   */
   describe('#update()', function() {
     it('Should fill the internal buffer', function() {
       return testingPromise(() => {
@@ -35,7 +45,9 @@ describe('UrlsafeBase64', function() {
       })
     });
   });
-
+  /**
+   * @test {UrlsafeBase64#digest}
+   */
   describe('#digest()', function() {
     let message: string;
     let urlbase64_test :string;

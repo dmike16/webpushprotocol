@@ -30,9 +30,9 @@ export const enum Urlbase64Mode {
 /**
  * Class that implemente the urlsafebase64 protocol.
  * This class can be used like a Stream or using the  method
- * [[update]]
- * [[digest]]
- * @see {@link https://nodejs.org/dist/latest-v8.x/docs/api/stream.html#stream_implementing_a_transform_stream|Trasform}
+ * {@link update}
+ * {@link digest}
+ * @see https://nodejs.org/dist/latest-v8.x/docs/api/stream.html#stream_implementing_a_transform_stream
  */
 @Sealed
 export class UrlsafeBase64 extends Transform {

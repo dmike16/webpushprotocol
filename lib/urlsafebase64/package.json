@@ -10,16 +10,17 @@
     "test": "test"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.4",
+    "@types/chai": "^4.0.9",
     "@types/mocha": "^2.2.43",
+    "@types/node": "^9.4.4",
     "chai": "^4.1.2",
     "del": "^3.0.0",
+    "esdoc": "^1.0.4",
+    "esdoc-standard-plugin": "^1.0.0",
     "gulp": "^3.9.1",
-    "gulp-typedoc": "^2.1.0",
     "gulp-typescript": "^3.2.2",
     "mocha": "^4.0.0",
-    "ts-node": "^3.3.0",
-    "typedoc": "^0.9.0",
+    "ts-node": "^4.0.1",
     "typescript": "^2.5.3"
   },
   "repository": {
@@ -27,13 +28,13 @@
     "url": "https://github.com/dmike16/webpushprotocol"
   },
   "scripts": {
-    "help" : "gulp",
+    "help": "gulp",
     "build": "gulp js",
     "types": "gulp dts",
     "dist": "gulp dist",
     "clean": "gulp clobber",
-    "docs": "gulp typedoc",
-    "test": "mocha -r test/tsnode.config.js test/urlsafebase64.test.ts"
+    "docs": "gulp clobber && gulp jsDoc && esdoc -c esdoc.json",
+    "test": "mocha -r test/tsnode.config.js test/*-spec.ts"
   },
   "keywords": [
     "url",
