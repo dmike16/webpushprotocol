@@ -1,0 +1,32 @@
+{
+    "source": "./dist",
+    "destination": "./docs",
+    "index": "./README.md",
+    "plugins" :[
+        {
+            "name": "esdoc-standard-plugin",
+            "option": {
+                "manual": {
+                    "index": "./doc/index.md",
+                    "files": [
+                       "./CHANGELOG.md"   
+                    ],
+                    "assets": "./doc/asset",
+                    "globalIndex": true
+                },
+                "brand": {
+                    "title": "Urlsafebase 64",
+                    "description": "Implementations of urlssafebase64 algo",
+                    "repository": "https://github.com/dmike16/webpushprotocol/tree/experiment/lib/urlsafebase64",
+                    "author": "dmike16"
+                },
+                "test": {
+                    "source": "./dist/test",
+                    "interfaces": ["describe","it","beforeEach"],
+                    "includes": ["spec\\.js$"],
+                    "excludes": ["\\.config.js$"]
+                }
+            }
+        }
+    ]
+}

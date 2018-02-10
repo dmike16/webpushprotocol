@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- esdoc configuration
 - gulpfile to traspile the ts code in JavaScript
 - ts-node configuration file
 - Test for encode, decode, update, digest function.
