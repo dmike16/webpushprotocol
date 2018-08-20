@@ -9,31 +9,18 @@
     "doc": "doc",
     "test": "test"
   },
-  "devDependencies": {
-    "@types/chai": "^4.0.9",
-    "@types/mocha": "^2.2.43",
-    "@types/node": "^9.4.4",
-    "chai": "^4.1.2",
-    "del": "^3.0.0",
-    "esdoc": "^1.0.4",
-    "esdoc-standard-plugin": "^1.0.0",
-    "gulp": "^3.9.1",
-    "gulp-typescript": "^3.2.2",
-    "mocha": "^4.0.0",
-    "ts-node": "^4.0.1",
-    "typescript": "^2.5.3"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dmike16/webpushprotocol"
   },
   "scripts": {
-    "help": "gulp",
-    "build": "gulp js",
-    "types": "gulp dts",
-    "dist": "gulp dist",
-    "clean": "gulp clobber",
-    "docs": "gulp clobber && gulp jsDoc && esdoc -c esdoc.json",
+    "tasks": "gulp --tasks",
+    "help": "gulp help",
+    "build-cmj": "gulp commonjs",
+    "build-esnext": "gulp esnext",
+    "build-es2015": "gulp es2015",
+    "build-umd": "gulp umd",
+    "clean": "gulp clean",
     "test": "mocha -r test/tsnode.config.js test/*-spec.ts"
   },
   "keywords": [
@@ -41,5 +28,22 @@
     "base64"
   ],
   "author": "dmike <cipmiky@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/fancy-log": "^1.3.0",
+    "@types/gulp": "^4.0.5",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.7.1",
+    "ansi-colors": "^3.0.0",
+    "chai": "^4.1.2",
+    "del": "^3.0.0",
+    "fancy-log": "^1.3.2",
+    "gulp": "^4.0.0",
+    "husky": "^0.14.3",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.5.0",
+    "typescript": "^3.0.1"
+  }
 }

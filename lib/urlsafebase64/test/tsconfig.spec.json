@@ -1,6 +1,13 @@
 {
   "extends": "../tsconfig.json",
-  "include":[
-    "./**/*"
+  "compilerOptions": {
+    "types": [
+      "node",
+      "mocha",
+      "chai"
+    ]
+  },
+  "files": [
+    "./urlsafebase64-spec.ts"
   ]
 }

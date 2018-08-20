@@ -54,7 +54,7 @@ export class UrlsafeBase64 extends Transform {
    * @param  {Function} callback A callback function
    */
   _transform(chunk: Buffer | string | TypedArray, encoding: string, callback: (err?: Error) => void) {
-    var _err = null;
+    let _err = null;
     try {
       this.update(chunk);
     } catch (err) {
