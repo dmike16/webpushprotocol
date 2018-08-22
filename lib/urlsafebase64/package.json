@@ -19,7 +19,7 @@
     "build-cmj": "gulp commonjs",
     "build-esnext": "gulp esnext",
     "build-es2015": "gulp es2015",
-    "build-umd": "gulp umd",
+    "build-all": "gulp buildall",
     "clean": "gulp clean",
     "test": "mocha -r test/tsnode.config.js test/*-spec.ts"
   },
