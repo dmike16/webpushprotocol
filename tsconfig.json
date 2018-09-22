@@ -2,19 +2,16 @@
   "compileOnSave":false,
   "compilerOptions":{
     "module": "commonjs",
-    "target": "ES6",
+    "target": "es2017",
     "emitDecoratorMetadata":true,
     "experimentalDecorators":true,
     "sourceMap": true,
     "noImplicitAny":true,
     "alwaysStrict": true,
-    "declaration": true,
+    "declaration": false,
     "lib":[
-      "ES6"
+      "es2017"
     ],
     "types": ["node","mocha","chai"]
-  },
-  "include":[
-    "src/**/*"
-  ]
+  }
 }

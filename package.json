@@ -2,8 +2,8 @@
   "name": "webpushprotocol",
   "version": "1.0.0",
   "description": "A nodejs library that implement or try to implement the webpush protocol",
-  "main": "lib/webpushprotocol.js",
-  "types": "lib/webpushprotocol.d.ts",
+  "main": "src/webpushprotocol.js",
+  "types": "src/webpushprotocol.d.ts",
   "directories": {
     "lib": "lib",
     "doc": "doc",
@@ -12,14 +12,16 @@
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.0.4",
-    "@types/mocha": "^2.2.43",
+    "@types/mocha": "^5.2.5",
     "asn1.js": "^4.8.1",
     "chai": "^4.1.2",
-    "gulp": "^3.9.1",
-    "gulp-typescript": "^3.2.2",
-    "mocha": "^4.0.0",
-    "ts-node": "^3.3.0",
-    "typescript": "^2.5.3"
+    "eslint": "^5.6.0",
+    "eslint-config-google": "^0.10.0",
+    "fancy-log": "^1.3.2",
+    "gulp": "^4.0.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
+    "typescript": "^3.0.3"
   },
   "bundledDependencies": [
     "lib/urlsafebase64"
@@ -29,6 +31,7 @@
     "url": "https://github.com/dmike16/webpushprotocol"
   },
   "scripts": {
+    "make": "node ./bin/make",
     "test": "node test/webpushprotocol.js",
     "jsdoc": "./node_modules/.bin/jsdoc -c config.json"
   },
