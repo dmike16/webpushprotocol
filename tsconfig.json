@@ -1,17 +1,36 @@
 {
-  "compileOnSave":false,
-  "compilerOptions":{
+  "compileOnSave": false,
+  "compilerOptions": {
     "module": "commonjs",
     "target": "es2017",
-    "emitDecoratorMetadata":true,
-    "experimentalDecorators":true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "sourceMap": true,
-    "noImplicitAny":true,
+    "noImplicitAny": true,
     "alwaysStrict": true,
     "declaration": false,
-    "lib":[
+    "lib": [
       "es2017"
     ],
-    "types": ["node","mocha","chai"]
+    "types": [
+      "node",
+      "mocha",
+      "chai"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "vapid": [
+        "packages/vapid/src/index"
+      ],
+      "jwt": [
+        "packages/jwt/src/index"
+      ],
+      "httpece": [
+        "packages/httpece/src/index"
+      ],
+      "urlsafebase64": [
+        "packages/urlsafebase64/src/index"
+      ]
+    }
   }
 }

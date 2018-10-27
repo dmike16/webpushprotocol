@@ -1,7 +1,7 @@
 {
-  "name": "jwt",
+  "name": "httpece",
   "version": "1.0.0",
-  "description": "Utility to create a JWT",
+  "description": "Utility to encrypt HTTPECE",
   "main": "src/index.js",
   "directories": {
     "lib": "lib",
@@ -9,7 +9,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node test/jwt.js",
+    "test": "node test/httpece.js",
     "jsdoc": "./node_modules/.bin/jsdoc -c config.json"
   },
   "repository": {
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/dmike16/webpushprotocol.git"
   },
   "keywords": [
-    "jwt"
+    "httpece"
   ],
   "author": "dmike <cipmiy@gmail.com>",
   "license": "MIT",

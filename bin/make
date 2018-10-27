@@ -1,3 +1,26 @@
 #!/usr/bin/env node
 require('../lib/bootstrap-local');
-require('../src/webpushprotocol.ts');
+// Extract root dir
+const path = require('path');
+const root = path.resolve(__dirname, '..');
+// Extract script to run
+// default to 'info'
+const args = process.argv.slice(2);
+const scriptName = args.pop() || 'info';
+
+// Create custom logger to pass to script
+const { info, error, warn } = require('fancy-log');
+const { white, red, yellow } = require('ansi-colors');
+const logger = {
+    info: (...txt) => info(white(txt)),
+    warn: (...txt) => warn(yellow(txt)),
+    error: (...txt) => error(red(txt)),
+};
+// Execute the main script passed as argument
+Promise.resolve()
+    .then(require(`../scripts/${scriptName}`).main(args, root, logger))
+    .then((exitCode) => process.exit(exitCode))
+    .catch((err) => {
+        logger.error(err.stack);
+        process.exit(-1);
+    });
