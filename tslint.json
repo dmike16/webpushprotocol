@@ -1,0 +1,23 @@
+{
+    "extends": "tslint:recommended",
+    "rules": {
+        "member-access": [
+            true,
+            "no-public"
+        ],
+        "ordered-imports": [
+            true,
+            {
+                "import-sources-order": "any",
+                "named-imports-order": "any"
+            }
+        ],
+        "no-var-requires": false
+    },
+    "linterOptions": {
+        "exclude": [
+            "*.js",
+            "bin/*"
+        ]
+    }
+}

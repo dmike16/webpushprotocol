@@ -1,6 +1,6 @@
-import { Urlbase64Mode, UrlsafeBase64 } from '../src/urlsafebase64';
+import { Urlbase64Mode, UrlsafeBase64 } from '../src';
 
-import createUrlsafeBase64 from '../src/urlsafebase64';
+import createUrlsafeBase64 from '../src';
 import { expect } from 'chai';
 
 /**

@@ -1,16 +1,16 @@
 {
-  "name": "urlsafebase64",
+  "name": "webpushprotocol",
   "version": "1.0.0",
-  "description": "Url safe base64 encoding and decoding",
+  "description": "A nodejs library that implement or try to implement the webpush protocol",
   "main": "src/index.js",
   "types": "src/index.d.ts",
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/dmike16/webpushprotocol"
   },
   "keywords": [
-    "url",
-    "base64"
+    "webpush"
   ],
   "author": "dmike16 <cipmiky@gmail.com>",
   "license": "MIT"

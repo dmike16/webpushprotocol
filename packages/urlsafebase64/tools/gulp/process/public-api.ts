@@ -1,1 +1,0 @@
-export { minimalCompiler } from './ts/minimal-compiler';

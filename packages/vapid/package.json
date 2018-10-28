@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Utility to create VAPID",
     "main": "src/index.js",
+    "types": "src/index.d.ts",
     "directories": {
       "lib": "lib",
       "doc": "doc",

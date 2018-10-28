@@ -1,1 +1,0 @@
-export { GULP_ENV } from './gulp-config';

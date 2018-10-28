@@ -3,12 +3,13 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2017",
+    "outDir": "dist",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
     "noImplicitAny": true,
     "alwaysStrict": true,
-    "declaration": false,
+    "declaration": true,
     "lib": [
       "es2017"
     ],
