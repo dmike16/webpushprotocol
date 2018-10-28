@@ -7,4 +7,5 @@ export async function main(args: any, root: string, logger: Logger) {
     logger.info("Clean ", clobberDir);
     await del(clobberDir);
     logger.info("Clean completed");
+    return 0;
 }
