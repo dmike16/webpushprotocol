@@ -14,7 +14,8 @@
         ],
         "no-var-requires": false,
         "interface-name": false,
-        "no-conditional-assignment": false
+        "no-conditional-assignment": false,
+        "no-string-literal": false
     },
     "linterOptions": {
         "exclude": [
