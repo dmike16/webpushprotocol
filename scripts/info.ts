@@ -1,5 +1,6 @@
 import { Logger } from "../tools/logger";
 const pkg = require("../package.json");
+const commitMsg = require("../tools/process/git/commit-msg.json");
 
 export async function main(args: any, root: string, logger: Logger): Promise<number> {
     const scriptAvailable: string[] = Object.keys(pkg.scripts)
@@ -24,11 +25,15 @@ export async function main(args: any, root: string, logger: Logger): Promise<num
     #
     #   .COMMIT GUIDELINE.
     # All commit should follow the below template:
-    # <type>(<scope>): <subject>
-    # <BLANK LINE>
-    # <body?>
-    # <BLANK LINE>
-    # <footer?>
+    #  ${commitMsg.template}
+    #
+    # With <style> and <scope> declared in 'tools/commit-msg.json'
+    #
+    #
+    #
+    #                    --------  GOOD CODING  --------
+    #
+    #
     #
     #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#`);
     return 0;

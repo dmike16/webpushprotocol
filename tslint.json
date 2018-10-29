@@ -12,7 +12,9 @@
                 "named-imports-order": "any"
             }
         ],
-        "no-var-requires": false
+        "no-var-requires": false,
+        "interface-name": false,
+        "no-conditional-assignment": false
     },
     "linterOptions": {
         "exclude": [

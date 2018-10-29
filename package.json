@@ -19,6 +19,7 @@
     "husky": "^1.1.2",
     "mocha": "^5.2.0",
     "nyc": "^13.0.1",
+    "rxjs": "^6.3.3",
     "tslint": "^5.11.0",
     "typescript": "^3.0.3"
   },
@@ -40,7 +41,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "echo TODO && exit 1"
+      "commit-msg": "npm run repo validate-commit"
     }
   },
   "author": "dmike16 <cipmiky@gmail.com>",
