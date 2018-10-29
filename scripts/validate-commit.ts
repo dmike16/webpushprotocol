@@ -1,7 +1,7 @@
 import { Logger } from "../tools/logger";
 import { CommitMsgValidator } from "../tools/process/git/commit-msg";
 
-export async function main(args: any, root: string, logger: Logger) {
+export async function main(args: any, root: string, logger: Logger): Promise<number> {
     // tslint:disable-next-line:no-string-literal
     const engine = new CommitMsgValidator(process.env["GIT_PARAMS"], logger);
 
