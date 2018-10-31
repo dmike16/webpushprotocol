@@ -12,7 +12,7 @@ export async function main(args: any, root: string, logger: Logger): Promise<num
     # Description      ${pkg.description}
     # Author           ${pkg.author}
     # Repo             ${pkg.repository.url}
-    # Licence          ${pkg.licence}
+    # Licence          ${pkg.license}
     #
     #
     #  .ABSTRACT.
