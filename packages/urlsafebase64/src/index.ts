@@ -1,15 +1,15 @@
 /**
-* This nodejs module contain encode and decode urlbase64 utilities.
-* The urlbase64 mode is similar to the standar base64 except that replace:
-* <ul>
-*   <li>'+' with '-'</li>
-*   <li>'/' with '_'</li>
-*   <li> remove trailing '='</li>
-* </ul
-* @author dmike <cipmiky@gmail.com>
-*/
+ * This nodejs module contain encode and decode urlbase64 utilities.
+ * The urlbase64 mode is similar to the standar base64 except that replace:
+ * <ul>
+ *   <li>'+' with '-'</li>
+ *   <li>'/' with '_'</li>
+ *   <li> remove trailing '='</li>
+ * </ul
+ * @author dmike <cipmiky@gmail.com>
+ */
 
-import { Transform } from 'stream';
+import { Transform } from "stream";
 
 /**
  * Default export. Factory function.
@@ -24,7 +24,7 @@ export default function createUrlsafeBase64(): UrlsafeBase64 {
  */
 export const enum Urlbase64Mode {
   ENCODE = "ENCODE",
-  DECODE = "DECODE"
+  DECODE = "DECODE",
 }
 
 /**
@@ -36,7 +36,16 @@ export const enum Urlbase64Mode {
  */
 @Sealed
 export class UrlsafeBase64 extends Transform {
-  private _handler = new binding.UrlsafeBase64Core();
+  /**
+   * Check if the input contain valid base64 characters.
+   * @param  {String} base64 The inpur string to validate
+   * @return {Boolean}       True if is base64 valid.
+   */
+  static validate(base64: string) {
+    return binding.UrlsafeBase64Core.validate(base64);
+  }
+
+  private handler = new binding.UrlsafeBase64Core();
   /**
    * Default constructor, that call the super constructor of Trasform stream.
    * @param  {Object} option Object
@@ -54,13 +63,13 @@ export class UrlsafeBase64 extends Transform {
    * @param  {Function} callback A callback function
    */
   _transform(chunk: Buffer | string | TypedArray, encoding: string, callback: (err?: Error) => void) {
-    let _err = null;
+    let err = null;
     try {
       this.update(chunk);
-    } catch (err) {
-      _err = err;
+    } catch (e) {
+      err = e;
     } finally {
-      callback(_err);
+      callback(err);
     }
   }
   /**
@@ -70,7 +79,7 @@ export class UrlsafeBase64 extends Transform {
    * @param  {Function} callback A callback function
    */
   _flush(callback: (chunk?: any) => void) {
-    this.push(this._handler.digest());
+    this.push(this.handler.digest());
     callback();
   }
   /**
@@ -78,21 +87,21 @@ export class UrlsafeBase64 extends Transform {
    * @param  {String|Buffer|TypedArray} chunk Input source to parse
    */
   update(chunk: Buffer | string | TypedArray) {
-    this._handler.update(chunk);
+    this.handler.update(chunk);
   }
   /**
    * Make the encode or decode in base64
    * @return {String} The encode or decode string
    */
   digest() {
-    return this._handler.digest();
+    return this.handler.digest();
   }
   /**
    * Set the mode to encode
    * @return {UrlsafeBase64} Return this for chaining
    */
   encode() {
-    this._handler.encode();
+    this.handler.encode();
     return this;
   }
   /**
@@ -100,7 +109,7 @@ export class UrlsafeBase64 extends Transform {
    * @return {UrlsafeBase64} Return this for chaining
    */
   decode() {
-    this._handler.decode();
+    this.handler.decode();
     return this;
   }
   /**
@@ -108,15 +117,7 @@ export class UrlsafeBase64 extends Transform {
    * @return {string} Return mode: encode or decode
    */
   get mode() {
-    return this._handler.mode;
-  }
-  /**
-   * Check if the input contain valid base64 characters.
-   * @param  {String} base64 The inpur string to validate
-   * @return {Boolean}       True if is base64 valid.
-   */
-  static validate(base64: string) {
-    return binding.UrlsafeBase64Core.validate(base64);
+    return this.handler.mode;
   }
 }
 
@@ -139,29 +140,32 @@ function Sealed(ctor: typeof UrlsafeBase64) {
  * Internal namespace
  * @private
  */
+// tslint:disable-next-line:no-namespace
 namespace binding {
   /**
    * Internal class that implemente the urlsafebase64
    * protocol.
    * @private
    */
+  // tslint:disable-next-line:max-classes-per-file
   export class UrlsafeBase64Core {
+    /**
+     * @private
+     */
+    static validate(base64: string) {
+      return /^[A-Za-z0-9\-_]+$/.test(base64);
+
+    }
+
     private _buffer: Buffer = null;
     private _mode: Urlbase64Mode = Urlbase64Mode.ENCODE;
 
-    /**
-     *
-     * @private
-     */
-    constructor() {
-
-    }
     /**
      * Update the internal buffer with the input passed.
      * @private
      */
     update(chunk: Chunk) {
-      let tmp_buffer = checkArgument(chunk);
+      const tmp_buffer = checkArgument(chunk);
       if (this._buffer !== null) {
         this._buffer = Buffer.concat([this._buffer, tmp_buffer], (tmp_buffer.length + this._buffer.length));
       } else {
@@ -205,13 +209,6 @@ namespace binding {
     get mode() {
       return this._mode;
     }
-    /**
-     * @private
-     */
-    static validate(base64: string) {
-      return /^[A-Za-z0-9\-_]+$/.test(base64);
-
-    }
   }
 
   /**
@@ -220,10 +217,9 @@ namespace binding {
    */
   type Chunk = Buffer | string | TypedArray;
 
-
   /**
    * Check compiler exhaustition
-   *@private
+   * @private
    */
   function assertNever(x: never): never {
     throw new Error(`Unexpected object ${x}`);
@@ -234,12 +230,12 @@ namespace binding {
    * @private
    */
   function checkArgument(chunk: Chunk): Buffer {
-    if (typeof chunk === 'string') {
+    if (typeof chunk === "string") {
       return Buffer.from(chunk);
     } else if (Buffer.isBuffer(chunk)) {
       return Buffer.from(chunk);
     } else {
-      let view = Buffer.from(chunk.buffer);
+      const view = Buffer.from(chunk.buffer);
       return Buffer.from(view);
     }
   }
@@ -249,19 +245,19 @@ namespace binding {
    * @private
    */
   function _encode(input: Buffer): string {
-    return input.toString('base64')
-      .replace(/\+/g, '-')
-      .replace(/\//g, '_')
-      .replace(/=+$/, '');
+    return input.toString("base64")
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=+$/, "");
   }
   /**
    * Internal function used to decode the url safe base64
    * @private
    */
   function _decode(urlbase64: string): Buffer {
-    let l = urlbase64.length;
-    let base64 = urlbase64 + '='.repeat((4 - l % 4) % 4);
-    base64.replace(/\-/g, '+').replace(/\_/g, '/');
-    return Buffer.from(base64, 'base64');
+    const l = urlbase64.length;
+    const base64 = urlbase64 + "=".repeat((4 - l % 4) % 4);
+    base64.replace(/\-/g, "+").replace(/\_/g, "/");
+    return Buffer.from(base64, "base64");
   }
 }

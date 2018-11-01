@@ -15,7 +15,13 @@
         "no-var-requires": false,
         "interface-name": false,
         "no-conditional-assignment": false,
-        "no-string-literal": false
+        "no-string-literal": false,
+        "variable-name": [
+            true,
+            "check-format",
+            "allow-leading-underscore",
+            "allow-snake-case"
+        ]
     },
     "linterOptions": {
         "exclude": [

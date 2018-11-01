@@ -15,8 +15,7 @@
     ],
     "types": [
       "node",
-      "mocha",
-      "chai"
+      "jasmine"
     ],
     "baseUrl": ".",
     "paths": {

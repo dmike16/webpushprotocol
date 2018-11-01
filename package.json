@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.0.4",
+    "@types/jasmine": "^2.8.9",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.0",
     "ansi-colors": "^3.2.1",
@@ -17,6 +18,7 @@
     "fancy-log": "^1.3.2",
     "gulp": "^4.0.0",
     "husky": "^1.1.2",
+    "jasmine": "^3.3.0",
     "mocha": "^5.2.0",
     "nyc": "^13.0.1",
     "rxjs": "^6.3.3",
@@ -31,13 +33,15 @@
     "repo": "node ./bin/devpkg",
     "info": "npm run repo info",
     "build": "npm run repo build",
-    "clean": "npm run repo clean"
+    "clean": "npm run repo clean",
+    "test": "npm run repo test"
   },
   "scripts-info": {
     "repo": "Display information about the project",
     "info": "Display information about the project",
     "clean": "Clean build generated code.",
-    "build": "Build all the lib into the packages directory."
+    "build": "Build all the lib into the packages directory.",
+    "test": "Test the spec of the project"
   },
   "husky": {
     "hooks": {
