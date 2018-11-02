@@ -2,11 +2,13 @@
 require('../lib/bootstrap-local');
 // Extract root dir
 const path = require('path');
+const minimist = require('minimist');
 const root = path.resolve(__dirname, '..');
 // Extract script to run
 // default to 'info'
-const args = process.argv.slice(2);
-const scriptName = args.pop() || 'info';
+const args = minimist(process.argv.slice(2));
+console.info(args);
+const scriptName = args._.pop() || 'info';
 
 // Create custom logger to pass to script
 const { info, error, warn } = require('fancy-log');

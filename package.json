@@ -5,9 +5,7 @@
   "description": "A repo packege manager for webpush protocol project",
   "dependencies": {},
   "devDependencies": {
-    "@types/chai": "^4.0.4",
     "@types/jasmine": "^2.8.9",
-    "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.0",
     "ansi-colors": "^3.2.1",
     "asn1.js": "^4.8.1",
@@ -19,6 +17,8 @@
     "gulp": "^4.0.0",
     "husky": "^1.1.2",
     "jasmine": "^3.3.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "minimist": "^1.2.0",
     "mocha": "^5.2.0",
     "nyc": "^13.0.1",
     "rxjs": "^6.3.3",
@@ -30,18 +30,18 @@
     "url": "https://github.com/dmike16/webpushprotocol"
   },
   "scripts": {
-    "repo": "node ./bin/devpkg",
-    "info": "npm run repo info",
-    "build": "npm run repo build",
-    "clean": "npm run repo clean",
-    "test": "npm run repo test"
+    "info": "node ./bin/devpkg info",
+    "build": "node ./bin/devpkg build",
+    "clean": "node ./bin/devpkg clean",
+    "test": "node ./bin/devpkg test --all",
+    "test-base64": "node ./bin/devpkg test --suite=urlsafebase64"
   },
   "scripts-info": {
-    "repo": "Display information about the project",
     "info": "Display information about the project",
     "clean": "Clean build generated code.",
     "build": "Build all the lib into the packages directory.",
-    "test": "Test the spec of the project"
+    "test": "Test the spec of the project",
+    "test-base64": "Test urlsafeBase64 project"
   },
   "husky": {
     "hooks": {

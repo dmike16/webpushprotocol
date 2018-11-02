@@ -1,8 +1,6 @@
 
 import createUrlsafeBase64, { UrlsafeBase64, Urlbase64Mode } from "urlsafebase64";
 
-declare function expect(...args: any): any;
-
 /**
  * @test {UrlsafeBase64}
  */
@@ -69,19 +67,8 @@ describe("UrlsafeBase64", () => {
         it("Should not change the configuration of properties", () => {
             expect(Object.isSealed(Object.getPrototypeOf(testInstance))).toBe(true);
             expect(Object.isSealed(UrlsafeBase64)).toBe(true);
-            expect(changeConfig).toThrow(TypeError);
+            expect(changeConfig).toThrowError(TypeError);
         });
     });
 
 });
-
-function testingPromise(test: (arg?: void) => void) {
-    return new Promise<void>((resolve, reject) => {
-        try {
-            test();
-            resolve();
-        } catch (err) {
-            reject(err);
-        }
-    });
-}
