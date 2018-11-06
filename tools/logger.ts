@@ -1,5 +1,5 @@
 export interface Logger {
-    error: (...txt: string[]) => void;
-    warn: (...txt: string[]) => void;
-    info: (...txt: string[]) => void;
+    error: (...txt: any[]) => void;
+    warn: (...txt: any[]) => void;
+    info: (...txt: any[]) => void;
 }

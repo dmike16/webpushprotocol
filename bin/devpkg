@@ -7,7 +7,6 @@ const root = path.resolve(__dirname, '..');
 // Extract script to run
 // default to 'info'
 const args = minimist(process.argv.slice(2));
-console.info(args);
 const scriptName = args._.pop() || 'info';
 
 // Create custom logger to pass to script
