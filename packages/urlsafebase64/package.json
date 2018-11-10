@@ -1,0 +1,17 @@
+{
+  "name": "urlsafebase64",
+  "version": "1.0.0",
+  "description": "Url safe base64 encoding and decoding",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmike16/webpushprotocol"
+  },
+  "keywords": [
+    "url",
+    "base64"
+  ],
+  "author": "dmike16 <cipmiky@gmail.com>",
+  "license": "MIT"
+}

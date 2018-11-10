@@ -1,40 +1,58 @@
 {
-  "name": "webpushprotocol",
+  "name": "@dmike16/webpushprotocol",
   "version": "1.0.0",
-  "description": "A nodejs library that implement or try to implement the webpush protocol",
-  "main": "lib/webpushprotocol.js",
-  "types": "lib/webpushprotocol.d.ts",
-  "directories": {
-    "lib": "lib",
-    "doc": "doc",
-    "test": "test"
-  },
+  "private": true,
+  "description": "A repo packege manager for webpush protocol project",
   "dependencies": {},
   "devDependencies": {
-    "@types/chai": "^4.0.4",
-    "@types/mocha": "^2.2.43",
+    "@types/jasmine": "^2.8.9",
+    "@types/node": "^10.12.0",
+    "ansi-colors": "^3.2.1",
     "asn1.js": "^4.8.1",
     "chai": "^4.1.2",
-    "gulp": "^3.9.1",
-    "gulp-typescript": "^3.2.2",
-    "mocha": "^4.0.0",
-    "ts-node": "^3.3.0",
-    "typescript": "^2.5.3"
+    "del": "^3.0.0",
+    "eslint": "^5.6.0",
+    "eslint-config-google": "^0.10.0",
+    "fancy-log": "^1.3.2",
+    "gulp": "^4.0.0",
+    "husky": "^1.1.2",
+    "istanbul-lib-coverage": "^2.0.1",
+    "istanbul-lib-instrument": "^3.0.0",
+    "istanbul-lib-report": "^2.0.2",
+    "istanbul-lib-source-maps": "^2.0.1",
+    "istanbul-reports": "^2.0.1",
+    "jasmine": "^3.3.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "minimist": "^1.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
+    "rxjs": "^6.3.3",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3"
   },
-  "bundledDependencies": [
-    "lib/urlsafebase64"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/dmike16/webpushprotocol"
   },
   "scripts": {
-    "test": "node test/webpushprotocol.js",
-    "jsdoc": "./node_modules/.bin/jsdoc -c config.json"
+    "info": "node ./bin/devpkg info --code-coverage",
+    "build": "node ./bin/devpkg build",
+    "clean": "node ./bin/devpkg clean",
+    "test": "node ./bin/devpkg test --all --code-coverage",
+    "test-base64": "node ./bin/devpkg test --suite=urlsafebase64 --code-coverage"
   },
-  "keywords": [
-    "webpush"
-  ],
+  "scripts-info": {
+    "info": "Display information about the project",
+    "clean": "Clean build generated code.",
+    "build": "Build all the lib into the packages directory.",
+    "test": "Test the spec of the project",
+    "test-base64": "Test urlsafeBase64 project"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "node ./bin/devpkg validate-commit"
+    }
+  },
   "author": "dmike16 <cipmiky@gmail.com>",
   "license": "MIT"
 }

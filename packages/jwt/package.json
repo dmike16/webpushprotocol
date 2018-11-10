@@ -1,0 +1,29 @@
+{
+  "name": "jwt",
+  "version": "1.0.0",
+  "description": "Utility to create a JWT",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/jwt.js",
+    "jsdoc": "./node_modules/.bin/jsdoc -c config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmike16/webpushprotocol.git"
+  },
+  "keywords": [
+    "jwt"
+  ],
+  "author": "dmike <cipmiy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmike16/webpushprotocol/issues"
+  },
+  "homepage": "https://github.com/dmike16/webpushprotocol#readme"
+}

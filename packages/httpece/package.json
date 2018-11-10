@@ -1,0 +1,29 @@
+{
+  "name": "httpece",
+  "version": "1.0.0",
+  "description": "Utility to encrypt HTTPECE",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/httpece.js",
+    "jsdoc": "./node_modules/.bin/jsdoc -c config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmike16/webpushprotocol.git"
+  },
+  "keywords": [
+    "httpece"
+  ],
+  "author": "dmike <cipmiy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmike16/webpushprotocol/issues"
+  },
+  "homepage": "https://github.com/dmike16/webpushprotocol#readme"
+}

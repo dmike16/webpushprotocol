@@ -1,0 +1,33 @@
+{
+    "extends": "tslint:recommended",
+    "rules": {
+        "member-access": [
+            true,
+            "no-public"
+        ],
+        "ordered-imports": [
+            true,
+            {
+                "import-sources-order": "any",
+                "named-imports-order": "any"
+            }
+        ],
+        "no-var-requires": false,
+        "interface-name": false,
+        "no-conditional-assignment": false,
+        "no-string-literal": false,
+        "variable-name": [
+            true,
+            "check-format",
+            "allow-leading-underscore",
+            "allow-snake-case"
+        ],
+        "object-literal-sort-keys": false
+    },
+    "linterOptions": {
+        "exclude": [
+            "*.js",
+            "bin/*"
+        ]
+    }
+}
