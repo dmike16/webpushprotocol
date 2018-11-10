@@ -3,13 +3,15 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2017",
-    "outDir": "dist",
+    "outDir": "./dist",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
+    "inlineSourceMap": true,
+    "inlineSources": false,
     "noImplicitAny": true,
     "alwaysStrict": true,
     "declaration": true,
+    "sourceRoot": ".",
     "lib": [
       "es2017"
     ],
@@ -17,7 +19,7 @@
       "node",
       "jasmine"
     ],
-    "baseUrl": ".",
+    "baseUrl": "",
     "paths": {
       "vapid": [
         "packages/vapid/src/index"

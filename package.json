@@ -19,6 +19,7 @@
     "istanbul-lib-coverage": "^2.0.1",
     "istanbul-lib-instrument": "^3.0.0",
     "istanbul-lib-report": "^2.0.2",
+    "istanbul-lib-source-maps": "^2.0.1",
     "istanbul-reports": "^2.0.1",
     "jasmine": "^3.3.0",
     "jasmine-spec-reporter": "^4.2.1",
@@ -38,7 +39,7 @@
     "build": "node ./bin/devpkg build",
     "clean": "node ./bin/devpkg clean",
     "test": "node ./bin/devpkg test --all --code-coverage",
-    "test-base64": "node ./bin/devpkg test --suite=urlsafebase64"
+    "test-base64": "node ./bin/devpkg test --suite=urlsafebase64 --code-coverage"
   },
   "scripts-info": {
     "info": "Display information about the project",

@@ -1,6 +1,7 @@
 const libReport = require("istanbul-lib-report");
 const reports = require("istanbul-reports");
 const libCoverage = require("istanbul-lib-coverage");
+const { sourceMapCache } = require("../lib/instrument-local");
 /**************************************************************
  * Create a custom istanbul jasmine spec reporter
  * Create a class that implements the jasmine.Reporter interface
@@ -17,7 +18,8 @@ export class IstanbulJasmineReporter implements jasmine.CustomReporter {
 
     jasmineDone(suiteInfo: jasmine.RunDetails) {
         if ((global as any).__coverage__) {
-            const map = libCoverage.createCoverageMap((global as any).__coverage__);
+            let map = libCoverage.createCoverageMap((global as any).__coverage__);
+            map = sourceMapCache.transformCoverage(map).map;
             const context = libReport.createContext({
                 dir: this.reportDir,
             });
@@ -25,6 +27,7 @@ export class IstanbulJasmineReporter implements jasmine.CustomReporter {
             this.reporters.forEach((reporter) => {
                 tree.visit(reports.create(reporter), context);
             });
+            sourceMapCache.dispose();
         }
     }
 }
