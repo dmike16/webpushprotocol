@@ -29,4 +29,4 @@ When the mileston is completed. Create a merge request from _testing_ to _master
 
 ### Create pull requests
 
-- [TEST-TO-MASTER](https://github.com/dual-lab/webpushprotocol/pulls/new/testing?template=Pull_Request.md)
+- [TEST-TO-MASTER](https://github.com/dual-lab/webpushprotocol/pull/new/testing?template=Pull_Request.md)
