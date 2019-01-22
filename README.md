@@ -27,6 +27,6 @@ When the mileston is completed. Create a merge request from _testing_ to _master
 - [Feat](https://github.com/dual-lab/webpushprotocol/issues/new?template=Feat.md) - proposal request
 - [Test](https://github.com/dual-lab/webpushprotocol/issues/new?template=Test.md) - testing feature
 
-### Create pull requests
+#### Create pull requests
 
 - [TEST-TO-MASTER](https://github.com/dual-lab/webpushprotocol/pull/new/testing?template=Pull_Request.md)
